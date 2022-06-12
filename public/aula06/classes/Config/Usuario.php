@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Classes;
+namespace Classes\Config;
 
 class Usuario
 {
