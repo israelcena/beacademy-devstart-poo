@@ -6,5 +6,5 @@ class Professor
 {
   public string $nome;
   public string $cpf;
-  public int $salario;
+  public float $salario;
 }
