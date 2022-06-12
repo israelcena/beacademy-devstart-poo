@@ -9,4 +9,14 @@ class Categoria
     private string $descricao
   ) {
   }
+
+  public function getNome(): string
+  {
+    return $this->nome;
+  }
+
+  public function setNome(string $nome): void
+  {
+    $this->nome = $nome;
+  }
 };
