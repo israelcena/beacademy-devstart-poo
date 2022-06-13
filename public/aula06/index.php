@@ -4,16 +4,18 @@ ini_set('display_errors', 1);
 
 include 'vendor/autoload.php';
 
-use Classes\Config\Usuario as UsuarioConfig;
-use Classes\Categoria as Cat;
-use Classes\Config\Falses\Falsa as FalsaConfig;
+use Dompdf\Dompdf;
 
-$us2 = new UsuarioConfig();
-$c1 = new Cat();
-$f1 = new FalsaConfig();
+$dompdf = new Dompdf();
 
-var_dump($us2);
-var_dump($c1);
-var_dump($f1);
+$html = '';
 
-echo "Tudo ok";
+for ($i = 0; $i < 10; $i++) {
+  $html .= '<p>ó o pente! ' . $i . '</p>';
+}
+
+$dompdf->loadHtml('<h1>Letra da Música ó o pente</h1>' . $html);
+
+$dompdf->render();
+
+$dompdf->stream();
