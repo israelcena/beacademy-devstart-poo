@@ -4,22 +4,22 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-class ProductController
+class ProductController extends AbstractController
 {
   public function listAction(): void
   {
-    include "/application/public/projeto/src/View/product/list.php";
+    parent::render('product/list');
   }
   public function addAction(): void
   {
-    include "/application/public/projeto/src/View/product/add.php";
+    parent::render('product/add');
   }
   public function removeAction(): void
   {
-    include "/application/public/projeto/src/View/product/remove.php";
+    parent::render('product/remove');
   }
   public function editAction(): void
   {
-    include "/application/public/projeto/src/View/product/edit.php";
+    parent::render('product/edit');
   }
 }
