@@ -6,8 +6,20 @@ namespace App\Controller;
 
 class ProductController
 {
-  public function indexAction(): void
+  public function listAction(): void
   {
-    echo 'Hello World! Estou dentro do ProductController</br>';
+    include "/application/public/projeto/src/View/product/list.php";
+  }
+  public function addAction(): void
+  {
+    include "/application/public/projeto/src/View/product/add.php";
+  }
+  public function removeAction(): void
+  {
+    include "/application/public/projeto/src/View/product/remove.php";
+  }
+  public function editAction(): void
+  {
+    include "/application/public/projeto/src/View/product/edit.php";
   }
 }
