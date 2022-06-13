@@ -8,9 +8,10 @@ use App\Controller\CategoryController;
 
 $i = new IndexController();
 $i->indexAction();
+$i->loginAction();
 
-$p = new ProductController();
-$p->indexAction();
+// $p = new ProductController();
+// $p->indexAction();
 
-$c = new CategoryController();
-$c->indexAction();
+// $c = new CategoryController();
+// $c->indexAction();

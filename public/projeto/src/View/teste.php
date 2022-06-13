@@ -1,0 +1,1 @@
+<h1>Olá Mundo, estou dentro de uma action de um controller, porém esse arquivo é um html dentro de uma view</h1>

@@ -8,6 +8,12 @@ class IndexController
 {
   public function indexAction(): void
   {
-    echo 'Hello World! Estou dentro do IndexController</br>';
+    // echo __DIR__;
+    include "/application/public/projeto/src/View/index/index.php";
+  }
+
+  public function loginAction(): void
+  {
+    include "/application/public/projeto/src/View/index/login.php";
   }
 }
