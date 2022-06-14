@@ -5,23 +5,28 @@ include "../vendor/autoload.php";
 use App\Controller\ErrorController;
 use App\Controller\IndexController;
 use App\Controller\ProductController;
-// use App\Controller\CategoryController;
 
 $url = explode("?", $_SERVER['REQUEST_URI'])[0];
 echo $url;
 
-$pe = new ErrorController();
-$pe->notFoundAction();
+function createRoute(string $controllerName, string $methodName){
+    return[
+        'controller' => $controllerName,
+        'method' => $methodName,
+    ];
+}
 
-$i = new IndexController();
-$i->indexAction();
-$i->loginAction();
+$routes = [
+    '/' => createRoute(IndexController::class, 'indexAction'),
+    'produtos' => createRoute(ProductController::class, 'listAction'),
+];
 
-$p = new ProductController();
-$p->listAction();
-$p->addAction();
-$p->removeAction();
-$p->editAction();
+if (!isset($routes[$url])) {
+    (new ErrorController())->notFoundAction();
+    exit;
+}
 
-// $c = new CategoryController();
-// $c->indexAction();
+$controllerName = $routes[$url]['controller'];
+$methodName = $routes[$url]['method'];
+
+(new $controllerName())->$methodName();
